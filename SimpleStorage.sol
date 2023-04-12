@@ -3,13 +3,13 @@
 pragma solidity ^0.8.18;
 
 contract SimpleStorage{
-    mapping(string => uint256) nameTaFav;
+    mapping(bytes32 => uint256) nameTaFav;
 
-    function addPersion(string memory name, uint favNumber) public {
+    function addPersion(bytes32 name, uint favNumber) public {
         nameTaFav[name] = favNumber;
     }
 
-    function getFavNumber(string memory name) public view returns(uint256){
+    function getFavNumber(bytes32 name) public view returns(uint256){
         return nameTaFav[name];
     }
 }
